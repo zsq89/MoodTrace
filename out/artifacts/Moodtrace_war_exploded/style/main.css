@@ -1,0 +1,55 @@
+body{
+    background-color: lightgray;
+}
+
+#userDropdownBtn{
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.dropdown-menu{
+    width: 100%;
+}
+
+.dropdown-menu a{
+    text-align: left;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+
+.progress{
+    border-radius: 0;
+    height: 70px;
+}
+
+.progress p{
+    line-height: 70px;
+    font-size: 25px;
+}
+
+.navbar a:active{
+    box-shadow: none;
+}
+
+.navbar .btn{
+    border-radius: 0;
+}
+
+.list-group-item #summary{
+    height: 200px;
+}
+
+.plusBtn,.minusBtn{
+    height: 70px;
+    line-height: 70px;
+    font-size: 25px;
+    border-radius: 0;
+}
+
+
+
+

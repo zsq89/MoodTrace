@@ -1,0 +1,41 @@
+.navbar-brand{
+    font-size: 25px;
+}
+
+body{
+    padding: 90px 0 0 0;
+}
+
+strong{
+    color: black;
+}
+
+.navbar-default{
+    background: linear-gradient(white,lightgray);
+    border-color: lightgray;
+    border-radius: 0;
+    box-shadow: 0 2px 2px darkgray;
+}
+
+.jumbotron {
+    position: relative;
+    z-index: 1;
+}
+
+.jumbotron:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url('../image/itbg.png') no-repeat;
+    background-size: cover;
+    opacity: 0.15;
+}
+
+.jumbotron button:visited{
+    box-shadow: none;
+}
+

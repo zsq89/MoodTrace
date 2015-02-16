@@ -1,0 +1,22 @@
+.list-group.sidebar a,#title{
+    height: 60px;
+    line-height: 40px;
+    color: steelblue;
+    border-radius: 0px;
+    text-align: left;
+
+}
+
+.list-group.sidebar #title{
+    font-size: 18px;
+    /*color: black;*/
+}
+
+.list-group a:hover{
+    background-color: white;
+    color: dodgerblue;
+}
+
+.list-group a:active{
+    box-shadow: none;
+}
