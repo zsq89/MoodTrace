@@ -4,20 +4,22 @@
   Date: 29/1/15
   Time: 3:45 PM
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
     <title>Homepage</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=deivce-width, initial-scale=1">
       <!-- Latest compiled and minified CSS -->
-      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
-      <!-- jQuery library -->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
-      <!-- Latest compiled JavaScript -->
-      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+      <%--jquery lib--%>
+      <script src="http://libs.baidu.com/jquery/1.11.1/jquery.js"></script>
+
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
       <!-- override style and js -->
       <link rel="stylesheet" href="style/style.css"/>
@@ -107,6 +109,25 @@
                               <div class="col-sm-offset-4 col-sm-6">
                                   <input type="password" class="form-control" id="pwdConf"
                                          placeholder="Confirm your password">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="userName" class="control-label col-sm-4">Name</label>
+                              <div class="col-sm-6">
+                                  <input type="text" class="form-control" id="userName"
+                                         name="name" placeholder="Enter your name">
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <div class="col-sm-offset-4 col-sm-6">
+                                  <label class="radio-inline"><input type="radio" name="gender" value="male">Male</label>
+                                  <label class="radio-inline"><input type="radio" name="gender" value="female">Female</label>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="birthday" class="control-label col-sm-4">Birthday</label>
+                              <div class="col-sm-6">
+                                  <input type="date" class="form-control" name="birthday" id="birthday">
                               </div>
                           </div>
                           <div class="form-group">

@@ -40,7 +40,7 @@ img{
 }
 
 .list-group-item #summary{
-    height: 200px;
+    height: 150px;
 }
 
 .plusBtn,.minusBtn{
@@ -49,6 +49,12 @@ img{
     font-size: 25px;
     border-radius: 0;
 }
+
+.list-group-item.disabled:hover{
+    cursor: default;
+}
+
+
 
 
 

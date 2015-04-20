@@ -4,25 +4,19 @@
   Date: 30/1/15
   Time: 9:45 PM
 --%>
-<%@ page import="java.sql.*" contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.util.*" contentType="text/html;charset=UTF-8" language="java"%>
+<jsp:useBean id="user" class="com.po.User" scope="page"/>
+<jsp:setProperty name="user" property="*"/>
+<jsp:useBean id="profile" class="com.po.UserProfile"/>
 <%
-    String email = request.getParameter("email");
-    String password = request.getParameter("password");
-    try{
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mt_user","root","");
-        Statement st = con.createStatement();
-        ResultSet rs;
-        rs = st.executeQuery("SELECT * FROM users WHERE email='"+email+"' AND password = '"+password+"'");
-        if (rs.next()){
+    boolean result;
+    String email=user.getEmail();
+    result=UserLogSys.Login(user);
+    if (result){
             session.setAttribute("email",email);
-            response.sendRedirect("mainPage.jsp");
+            profile=UserProfileManager.getProfile(email);
+            if(profile!=null)
+                session.setAttribute("name",profile.getName());
+            response.sendRedirect("tracer.jsp");
         }
-    }catch (ClassNotFoundException e1){
-        System.out.println(e1);
-    }catch (java.sql.SQLException e2){
-        System.out.println(e2);
-
-    }
-
 %>

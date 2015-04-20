@@ -1,0 +1,13 @@
+CREATE TABLE moodData
+(
+M_Id int NOT NULL PRIMARY KEY,
+recordDate DATE NOT NULL,
+recordTime TIME NOT NULL,
+pInd int NOT NULL,
+hInd int NOT NULL,
+sInd int NOT NULL,
+aInd int NOT NULL,
+user_id INT NOT NULL,
+FOREIGN KEY (user_id) REFERENCES users(id),
+set foreign_key_checks=0
+)

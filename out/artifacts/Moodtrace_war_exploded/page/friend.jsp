@@ -12,13 +12,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=deivce-width, initial-scale=1">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
-    <!-- Latest compiled JavaScript -->
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <%--jquery lib--%>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
     <!-- override style and js -->
     <link rel="stylesheet" href="../style/style.css"/>
@@ -45,7 +48,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="mainPage.jsp" class="btn btn-lg"><span class="glyphicon glyphicon-check"></span> Trace</a></li>
+                    <li><a href="tracer.jsp" class="btn btn-lg"><span class="glyphicon glyphicon-check"></span> Trace</a></li>
                     <li><a href="analyzer.jsp" class="btn btn-lg"><span class="glyphicon glyphicon-tasks"></span> Analyze</a></li>
                     <li><a href="friend.jsp" class="btn btn-lg active"><span class="glyphicon glyphicon-user"></span>
                         Friends</a></li>

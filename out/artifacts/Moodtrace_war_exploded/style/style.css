@@ -2,19 +2,32 @@
     font-size: 25px;
 }
 
+.navbar-brand,
+.navbar-nav li a{
+    line-height: 40px;
+    height: 40px;
+    padding-top: 0;
+}
+
+.navbar{
+    min-height: 40px;
+}
+
+
 body{
-    padding: 90px 0 0 0;
+    padding: 60px 0 0 0;
 }
 
 strong{
     color: black;
 }
 
+
 .navbar-default{
-    background: linear-gradient(white,lightgray);
-    border-color: lightgray;
-    border-radius: 0;
-    box-shadow: 0 2px 2px darkgray;
+    /*background: linear-gradient(white,lightgray);*/
+    /*border-color: lightgray;*/
+    /*border-radius: 0;*/
+    /*box-shadow: 0 2px 2px darkgray;*/
 }
 
 .jumbotron {
