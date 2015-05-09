@@ -101,8 +101,8 @@
         <jsp:useBean id="periodUtil" class="com.util.MoodPeriodUtil"/>
         <%
             java.sql.Date[] thisWeek;
-            long theFuture = System.currentTimeMillis() - (86400 * 7 * 1000);
-            Date dt = new Date(theFuture);
+//            long theFuture = System.currentTimeMillis() - (86400 * 7 * 1000);
+            Date dt = new Date();
             thisWeek = periodUtil.getThisWeek(dt);
             ArrayList<MoodCard> list;
             String email = (String) session.getAttribute("email");
@@ -112,13 +112,13 @@
         <div class="col-md-3 middle">
             <%
                 if (list != null && list.size()!=0) {
-                    selectedCard=list.get(0);
+
             %>
             <%--display mood list--%>
             <ul class="list-group">
                 <% for (MoodCard card : list) {%>
                 <li class="list-group-item">
-                    <a href="#">
+                    <a href="analyzer.jsp" onclick="selectCard()">
                         <p><%=card.getRecordDate() + "  " + card.getRecordTime()%>
                         </p>
                         <p>Mood value: <%=card.getMoodValue()%>
@@ -134,11 +134,14 @@
         <div class="col-md-6 right">
             <ul class="list-group">
                 <li class="list-group-item card-panel-header">
-                    <h3>This is your card</h3>
+                    <h3>Mood Card</h3>
                 </li>
                 <li class="list-group-item card-panel-body">
 
-                    <% if(selectedCard!=null){ %>
+                    <%
+                        if (list != null && list.size()!=0) {
+                            if (selectedCard==null){selectedCard=list.get(0);}
+                    %>
                     <p><%=selectedCard.getRecordDate()+" "+selectedCard.getRecordTime()%></p>
                     <p><%=selectedCard.getMoodValue()%></p>
                     <%
@@ -150,24 +153,18 @@
                     <p>Anger: <%=mood[3]%></p>
                     <p><%=selectedCard.getRemark()%></p>
                     <% }else {%>
-                    <p>No record</p>
+                    <p>Please select a record</p>
                     <% } %>
                 </li>
             </ul>
         </div>
     </div>
 
-
-<%--<h3>Mood record</h3>--%>
-<%--<%--%>
-<%--int[] mood=card.getMood();--%>
-<%--%>--%>
-<%--<p>Pleasure: <%=mood[0]%></p>--%>
-<%--<p>Happiness: <%=mood[1]%></p>--%>
-<%--<p>Sorrow: <%=mood[2]%></p>--%>
-<%--<p>Anger: <%=mood[3]%></p>--%>
-<%--<h3>Notes</h3>--%>
-<%--<p><%=card.getRemark()%></p>--%>
+<script>
+    function selectCard(){
+//        change the content inside li="card-panel-body"
+    }
+</script>
 
 </body>
 </html>

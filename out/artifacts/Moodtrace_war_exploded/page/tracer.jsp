@@ -120,13 +120,6 @@
                         </div>
                     </a>
                     <div class="list-group-collapse collapse" id="list">
-                        <%--<a class="list-group-item btn disabled" href="#">--%>
-                            <%--<ul class="list-group">--%>
-                                <%--<li class="list-group-item">--%>
-                                    <%----%>
-                                <%--</li>--%>
-                            <%--</ul>--%>
-                        <%--</a>--%>
                         <div class="container">
                             <h3>Please record your mood indices</h3>
                             <form role="form" action="moodTrace.jsp" method="post">

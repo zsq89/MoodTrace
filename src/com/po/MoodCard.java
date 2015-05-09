@@ -26,12 +26,15 @@ public class MoodCard {
     public double getMoodValue() {
         double value=0;
         int weightSum=0;
-        final int[] weights={3,6,-3,-6};
+        int[] weights={3,6,-3,-6};
         for(int i=0;i<mood.length;i++){
             value+=weights[i]*mood[i];
-            weightSum+=weights[i];
+            if (weights[i]>0){
+                weightSum+=weights[i];
+            }
+
         }
-        value/=(mood.length*weightSum);
+        value=value/weightSum;
         return value;
     }
 
