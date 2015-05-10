@@ -107,6 +107,7 @@
             ArrayList<MoodCard> list;
             String email = (String) session.getAttribute("email");
             list = MoodManager.getMoodCard(email, thisWeek[0], thisWeek[1]);
+            request.getSession().setAttribute("list",list);
             MoodCard selectedCard=null;
         %>
         <div class="col-md-3 middle">
@@ -116,9 +117,11 @@
             %>
             <%--display mood list--%>
             <ul class="list-group">
-                <% for (MoodCard card : list) {%>
+                <% for (int i=0;i<list.size();i++) {
+                    MoodCard card=list.get(i);
+                %>
                 <li class="list-group-item">
-                    <a href="analyzer.jsp" onclick="selectCard()">
+                    <a href="#" onclick="selectCard(<%=i%>)">
                         <p><%=card.getRecordDate() + "  " + card.getRecordTime()%>
                         </p>
                         <p>Mood value: <%=card.getMoodValue()%>
@@ -136,11 +139,11 @@
                 <li class="list-group-item card-panel-header">
                     <h3>Mood Card</h3>
                 </li>
-                <li class="list-group-item card-panel-body">
-
+                <li class="list-group-item card-panel-body" id="card-panel-body">
                     <%
                         if (list != null && list.size()!=0) {
                             if (selectedCard==null){selectedCard=list.get(0);}
+                            else selectedCard=list.get((Integer)session.getAttribute("cardId"));
                     %>
                     <p><%=selectedCard.getRecordDate()+" "+selectedCard.getRecordTime()%></p>
                     <p><%=selectedCard.getMoodValue()%></p>
@@ -161,8 +164,27 @@
     </div>
 
 <script>
-    function selectCard(){
-//        change the content inside li="card-panel-body"
+    function selectCard(index)
+    {
+        var xmlhttp;
+        if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                var res=xmlhttp.responseText;
+                document.getElementById("card-panel-body").innerHTML=res;
+            }
+        };
+        xmlhttp.open("GET","selectCard.jsp?Id="+index,true);
+        xmlhttp.send();
     }
 </script>
 
